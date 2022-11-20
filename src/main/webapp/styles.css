@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+h1, body {
+	font-family: "Arial";
+}
+
+h1 {
+	color: darkblue;
+}
+
+body {
+	color: blue;
+	text-align: center;
+	background: lightyellow;
+}
+
+td {
+	color: black;
+}
+
+td1 {
+	color: darkblue;
+}
+
+table, th {
+	border: 2px solid darkblue;
+	background: lightcyan;
+	margin-left: auto;
+	margin-right: auto;
+	
+}
+th {
+	background: lightblue;
+}
+td {
+	border: 1px solid darkblue;
+}
+
