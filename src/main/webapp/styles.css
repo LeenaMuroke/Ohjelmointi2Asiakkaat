@@ -1,5 +1,10 @@
 @charset "UTF-8";
 
+#linkki {
+	text-decoration: none;
+	color: darkblue;
+}
+
 h1, body {
 	font-family: "Arial";
 }
@@ -12,6 +17,19 @@ body {
 	color: blue;
 	text-align: center;
 	background: lightyellow;
+}
+
+.oikealle {
+	text-align: right;
+	
+}
+
+.poista {
+	color: red;
+	text-decoration: underline;
+	font-weight: bold;
+	cursor: pointer;	
+	background: white;
 }
 
 td {
@@ -35,4 +53,5 @@ th {
 td {
 	border: 1px solid darkblue;
 }
+
 

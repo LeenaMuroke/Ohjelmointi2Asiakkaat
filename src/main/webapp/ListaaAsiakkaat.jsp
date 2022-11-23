@@ -13,17 +13,21 @@
 	<p>Tällä sivulla voit hakea asiakkaita tietokannasta hakuasanan avulla</p>
 	<table id="listaus">
 		<thead>
+		<tr>
+			<th colspan="6" class="oikealle"><a id="linkki" href="LisaaAsiakas.jsp">Lisää asiakas</a></th>
+		</tr>
 			<tr>
-				<th>Hakusana: </th>
+				<th colspan="2">Hakusana:</th>
 				<th colspan="3"><input type="text" id="hakusana"></th>
-				<th><input type="button" value="hae" id="hakunappi" onclick="haeAsiakkaat()"></th>
-			</tr>
+				<th colspan="2"><input type="button" value="Hae" id="hakunappi" onclick="haeAsiakkaat()"></th>
+			</tr>	
 			<tr>
 				<th>Asiakas ID</th>
 				<th>Etunimi</th>
 				<th>Sukunimi</th>
-				<th>Puhlinnumero</th>
+				<th>Puhelinnumero</th>
 				<th>Sähköposti</th>
+				<th></th>
 			</tr>
 		</thead>
 		<tbody id="tbody">
