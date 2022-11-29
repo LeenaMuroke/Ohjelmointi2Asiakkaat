@@ -7,11 +7,11 @@
 <script src="scripts/main.js"></script>
 <script src="scripts/io.js"></script>
 <link rel="stylesheet" type="text/css" href="styles.css">
-<title>Lisää asiakas</title>
+<title>Muuta asiakkaan tietoja</title>
 </head>
-<body onload="asetaFocus('etunimi')" onkeydown="tutkiKey(event, 'lisaa')">
-	<h1>Asiakkaan lisääminen</h1>
-	<p>Tällä sivulla voit lisätä tietokantaan asiakkaan</p>
+<body onload="asetaFocus('etunimi')" onkeydown="tutkiKey(event, 'muuta')">
+	<h1>Muuta asiakkaan tietoja</h1>
+	<p>Tällä sivulla voit muuttaa tietokannasta löytyvän asikkaan tietoja</p>
 	<form name="lomake">
 		<table>
 			<thead>
@@ -34,11 +34,15 @@
 					<td><input type="text" name="sukunimi" id="sukunimi"></td>
 					<td><input type="text" name="puhelin" id="puhelin"></td>
 					<td><input type="text" name="sposti" id="sposti"></td>
-					<td><input type="button" value="Lisää asiakas" onclick="tutkiJaLisaa()"></td>
+					<td><input type="button" value="Muuta" onclick="tutkiJaPaivita()"></td>
 				</tr>
 			</tbody>
 		</table>
+		<input type="hidden" name="asiakas_id" id="asiakas_id">
 	</form>
-<p id="ilmo"></p>
+	<p id="ilmo"></p>
 </body>
+<script>
+haeAsiakas();
+</script>
 </html>

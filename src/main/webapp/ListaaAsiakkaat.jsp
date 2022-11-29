@@ -5,16 +5,17 @@
 <head>
 <meta charset="UTF-8">
 <script src="scripts/main.js"></script>
+<script src="scripts/io.js"></script>
 <link rel="stylesheet" type="text/css" href="styles.css">
 <title>Asiakkaiden listaus</title>
 </head>
-<body>
+<body onload="asetaFocus('hakusana')" onkeydown="tutkiKey(event, 'listaa')">
 	<h1>Asiakkaiden listaus</h1>
 	<p>Tällä sivulla voit hakea asiakkaita tietokannasta hakuasanan avulla</p>
 	<table id="listaus">
 		<thead>
 		<tr>
-			<th colspan="6" class="oikealle"><a id="linkki" href="LisaaAsiakas.jsp">Lisää asiakas</a></th>
+			<th colspan="6" class="oikealle"><a id="linkki" href="LisaaAsiakas.jsp">Lisää uusi asiakas</a></th>
 		</tr>
 			<tr>
 				<th colspan="2">Hakusana:</th>
