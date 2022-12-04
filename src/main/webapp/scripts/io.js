@@ -107,9 +107,9 @@ function paivitaTiedot() {
    	.then(responseObj => {	
    		console.log(responseObj);
    		if(responseObj.response==0){
-   			document.getElementById("ilmo").innerHTML = "Asiakkaan muutos epäonnistui.";	
+   			document.getElementById("ilmo").innerHTML = "Asiakkaan tietojen päivitys epäonnistui.";	
         }else if(responseObj.response==1){ 
-        	document.getElementById("ilmo").innerHTML = "Asiakkaan muutos onnistui.";
+        	document.getElementById("ilmo").innerHTML = "Asiakkaan tietojen päivitys onnistui.";
 			document.lomake.reset();	        	
 		}
 		setTimeout(function(){ document.getElementById("ilmo").innerHTML=""; }, 3000);

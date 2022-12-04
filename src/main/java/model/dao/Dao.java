@@ -1,6 +1,5 @@
 package model.dao;
 
-import java.io.File;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -21,8 +20,9 @@ public class Dao {
 		
 		Connection con = null;
 		String path = System.getProperty("catalina.base");
-		path = new File(System.getProperty("user.dir")).getParentFile().toString() +"\\";
-		//path = path.substring(0, path.indexOf(".metadata")).replace("\\", "/");
+		//path = new File(System.getProperty("user.dir")).getParentFile().toString() +"\\";
+		path = path.substring(0, path.indexOf(".metadata")).replace("\\", "/");
+		path += "/webapps/";
 		String url = "jdbc:sqlite:" + path + db;
 		try {
 			Class.forName("org.sqlite.JDBC");
@@ -131,7 +131,7 @@ public ArrayList<Asiakas> getAllItems(String searchStr) {
 
 	public boolean addItem(Asiakas asiakas) {
 		boolean paluuArvo = true;
-		sql = "INSERT INTO asiakkaat(etunimi, sukunimi, puhelin, sposti) VALUES (?, ?, ?, ?)";
+		sql = "INSERT INTO asiakkaat(etunimi, sukunimi, puhelin, sposti) VALUES(?, ?, ?, ?)";
 		try {
 			con = yhdista();
 			stmtPrep = con.prepareStatement(sql);
@@ -232,5 +232,28 @@ public ArrayList<Asiakas> getAllItems(String searchStr) {
 			sulje();
 		}				
 		return paluuArvo;
+	}
+	
+	public String findUser(String uid, String pwd) {
+		String nimi = null;
+		sql="SELECT * FROM asiakkaat WHERE sposti=? AND salasana=?";						  
+		try {
+			con = yhdista();
+			if(con!=null){ 
+				stmtPrep = con.prepareStatement(sql); 
+				stmtPrep.setString(1, uid);
+				stmtPrep.setString(2, pwd);
+        		rs = stmtPrep.executeQuery();  
+        		if(rs.isBeforeFirst()){ 
+        			rs.next();
+        			nimi = rs.getString("etunimi")+ " " +rs.getString("sukunimi");     			      			
+				}        		
+			}			        
+		} catch (Exception e) {				
+			e.printStackTrace();			
+		} finally {
+			sulje();
+		}				
+		return nimi;
 	}
 }
